@@ -6,9 +6,9 @@ Attempting to bind to HOST environment variable: 0.0.0.0
 If this was unintentional, check that you haven't mistakenly set it in your shell.
 Learn more here: https://cra.link/advanced-config
 
-(node:7244) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:8510) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
 (Use `node --trace-deprecation ...` to show where the warning was created)
-(node:7244) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:8510) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
 Starting the development server...
 
 Failed to compile.
@@ -70,6 +70,7 @@ Error: It looks like you're trying to use `tailwindcss` directly as a PostCSS pl
     at LazyResult.runAsync (/home/kavia/workspace/code-generation/swankeyglow-landing-95643-7d0fecb8/landing_page_frontend/node_modules/postcss/lib/lazy-result.js:290:26)
     at LazyResult.async (/home/kavia/workspace/code-generation/swankeyglow-landing-95643-7d0fecb8/landing_page_frontend/node_modules/postcss/lib/lazy-result.js:192:30)
     at LazyResult.then (/home/kavia/workspace/code-generation/swankeyglow-landing-95643-7d0fecb8/landing_page_frontend/node_modules/postcss/lib/lazy-result.js:436:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
 
 ERROR in ./src/index.css (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./src/index.css)
 Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):
@@ -79,5 +80,6 @@ Error: It looks like you're trying to use `tailwindcss` directly as a PostCSS pl
     at LazyResult.runAsync (/home/kavia/workspace/code-generation/swankeyglow-landing-95643-7d0fecb8/landing_page_frontend/node_modules/postcss/lib/lazy-result.js:290:26)
     at LazyResult.async (/home/kavia/workspace/code-generation/swankeyglow-landing-95643-7d0fecb8/landing_page_frontend/node_modules/postcss/lib/lazy-result.js:192:30)
     at LazyResult.then (/home/kavia/workspace/code-generation/swankeyglow-landing-95643-7d0fecb8/landing_page_frontend/node_modules/postcss/lib/lazy-result.js:436:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
 
 webpack compiled with 2 errors
