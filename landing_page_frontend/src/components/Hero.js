@@ -56,7 +56,7 @@ function Hero() {
       {/* Hero content */}
       <div className="max-w-2xl mx-auto flex flex-col items-center justify-center relative z-10">
         <h1 className="font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight text-gray-900 dark:text-white drop-shadow mb-4">
-          {/*
+          {/* 
             Brand: primary color accent for "Swankey", text shadow for strong contrast
           */}
           The Modern Way to <br className="hidden sm:inline" />
