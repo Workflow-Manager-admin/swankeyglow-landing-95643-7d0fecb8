@@ -2,30 +2,25 @@ import React from 'react';
 
 /**
  * PUBLIC_INTERFACE
- * Hero section for a Swankey-inspired landing page.
- * Features:
- *  - Brand headline and subheadline
- *  - Dynamic gradient circular backgrounds, animated accent lines (SVG)
- *  - Two visually distinct CTA buttons: "Why Swankey" (outlined), "Get Started" (filled)
- *  - Responsive, mobile-friendly stacking
- *  - Modern typography and smooth transitions
- *  - Tailwind CSS for all styling
+ * Hero section for the landing page: bold headline, subheadline, two animated CTA buttons,
+ * vibrant gradients (SVG + Tailwind), modern animations, and full mobile responsiveness.
+ * Designed for visual impact and easy integration with App.js.
  */
- // PUBLIC_INTERFACE
+// PUBLIC_INTERFACE
 function Hero() {
   return (
     <section
-      className="relative flex flex-col items-center justify-center overflow-hidden w-full py-20 px-4 md:py-32 text-center isolate"
+      className="relative flex flex-col items-center justify-center w-full overflow-hidden py-20 px-4 md:py-32 text-center isolate"
       style={{ minHeight: '420px' }}
     >
-      {/* Gradients & Decorative Background */}
+      {/* Vibrant Gradient Backgrounds (SVG accent circles) */}
       <div
         className="absolute inset-0 pointer-events-none -z-10"
         aria-hidden="true"
       >
-        {/* Top-left accent */}
+        {/* Top left gradient accent */}
         <svg
-          className="absolute left-[-7vw] top-[-80px] w-[420px] h-[420px] opacity-40 blur-[80px] animate-[float_7s_ease-in-out_infinite]"
+          className="absolute left-[-8vw] top-[-80px] w-[420px] h-[420px] opacity-40 blur-[80px] animate-[float_7s_ease-in-out_infinite]"
           style={{ filter: 'saturate(1.4)' }}
           viewBox="0 0 420 420"
           fill="none"
@@ -39,10 +34,10 @@ function Hero() {
             </linearGradient>
           </defs>
         </svg>
-        {/* Bottom-right accent */}
+        {/* Bottom right gradient accent */}
         <svg
           className="absolute right-[-8vw] bottom-[-100px] w-[430px] h-[430px] opacity-30 blur-[88px] animate-[float2_8s_ease-in-out_infinite]"
-          style={{ filter: 'saturate(1.3)' }}
+          style={{ filter: 'saturate(1.2)' }}
           viewBox="0 0 430 430"
           fill="none"
         >
@@ -69,6 +64,7 @@ function Hero() {
           Effortlessly grow your business, showcase your flair, and captivate clients with a vibrant, responsive experience.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center items-center w-full">
+          {/* Outlined CTA Button */}
           <button
             type="button"
             className="relative border-2 border-blue-700 dark:border-blue-300 text-blue-700 dark:text-blue-200 bg-transparent font-semibold py-2.5 px-7 rounded-lg transition hover:bg-blue-50 dark:hover:bg-blue-950 focus:outline-none focus-visible:ring-2 ring-blue-300 text-base sm:text-lg shadow-sm hover:-translate-y-0.5 active:scale-[0.98] duration-150"
@@ -76,6 +72,7 @@ function Hero() {
           >
             Why Swankey?
           </button>
+          {/* Filled CTA Button */}
           <button
             type="button"
             className="relative bg-blue-700 hover:bg-blue-800 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold py-2.5 px-7 rounded-lg transition focus:outline-none focus-visible:ring-2 ring-blue-300 text-base sm:text-lg shadow-md hover:-translate-y-1 active:scale-[0.98] duration-150"
@@ -86,7 +83,7 @@ function Hero() {
           </button>
         </div>
       </div>
-      {/* Animated floating accent lines */}
+      {/* Animated accent lines for added energy */}
       <svg
         className="absolute left-1/2 top-[80%] -translate-x-1/2 w-[90vw] max-w-4xl opacity-25 dark:opacity-35 animate-[wobble_12s_ease-in-out_infinite]"
         height="90"
@@ -110,7 +107,7 @@ function Hero() {
           opacity="0.8"
         />
       </svg>
-      {/* Custom animation keyframes for accents/gradient */}
+      {/* Custom keyframes for animated gradients and floating effects */}
       <style>
         {`
           @keyframes float {
