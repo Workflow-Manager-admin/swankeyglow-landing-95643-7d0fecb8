@@ -10,7 +10,7 @@ import React from 'react';
 function Hero() {
   return (
     <section
-      className="relative flex flex-col items-center justify-center w-full overflow-hidden py-20 px-4 md:py-32 text-center isolate"
+      className="relative flex flex-col items-center justify-center w-full overflow-hidden py-14 xs:py-16 sm:py-20 md:py-32 px-3 xs:px-4 sm:px-6 text-center isolate"
       style={{ minHeight: '420px' }}
     >
       {/* Vibrant Gradient Backgrounds (SVG accent circles) */}
@@ -20,7 +20,7 @@ function Hero() {
       >
         {/* Top left gradient accent */}
         <svg
-          className="absolute left-[-8vw] top-[-80px] w-[420px] h-[420px] opacity-40 blur-[80px] animate-[float_7s_ease-in-out_infinite]"
+          className="absolute left-[-8vw] top-[-80px] w-[230px] h-[230px] sm:w-[420px] sm:h-[420px] opacity-40 blur-[80px] animate-[float_7s_ease-in-out_infinite]"
           style={{ filter: 'saturate(1.4)' }}
           viewBox="0 0 420 420"
           fill="none"
@@ -36,7 +36,7 @@ function Hero() {
         </svg>
         {/* Bottom right gradient accent */}
         <svg
-          className="absolute right-[-8vw] bottom-[-100px] w-[430px] h-[430px] opacity-30 blur-[88px] animate-[float2_8s_ease-in-out_infinite]"
+          className="absolute right-[-8vw] bottom-[-100px] w-[230px] h-[230px] sm:w-[430px] sm:h-[430px] opacity-30 blur-[88px] animate-[float2_8s_ease-in-out_infinite]"
           style={{ filter: 'saturate(1.2)' }}
           viewBox="0 0 430 430"
           fill="none"
@@ -54,20 +54,20 @@ function Hero() {
 
       {/* Hero Main Content */}
       <div className="max-w-2xl mx-auto flex flex-col items-center justify-center relative z-10">
-        <h1 className="font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight text-gray-900 dark:text-white drop-shadow mb-4">
+        <h1 className="font-extrabold text-3xl xs:text-4xl sm:text-5xl md:text-6xl leading-tight text-gray-900 dark:text-white drop-shadow mb-3 xs:mb-4">
           The Modern Way to <br className="hidden sm:inline" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-500 to-indigo-400 dark:from-blue-400 dark:via-blue-300 dark:to-yellow-400 animate-gradient-xy" style={{ color: '#000000' }}>
             Glow with Daily Quotes
           </span>
         </h1>
-        <p className="max-w-xl text-base sm:text-lg md:text-2xl text-gray-600 dark:text-gray-200 mb-10 font-medium">
+        <p className="max-w-md xs:max-w-lg sm:max-w-xl text-sm xs:text-base sm:text-lg md:text-2xl text-gray-600 dark:text-gray-200 mb-7 xs:mb-8 sm:mb-10 font-medium">
           Effortlessly grow your business, showcase your flair, and captivate clients with a vibrant, responsive experience.
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center items-center w-full">
+        <div className="flex flex-col xs:flex-row gap-2 xs:gap-3 sm:gap-5 justify-center items-center w-full">
           {/* Outlined CTA Button */}
           <button
             type="button"
-            className="relative border-2 border-blue-700 dark:border-blue-300 text-blue-700 dark:text-blue-200 bg-transparent font-semibold py-2.5 px-7 rounded-lg transition hover:bg-blue-50 dark:hover:bg-blue-950 focus:outline-none focus-visible:ring-2 ring-blue-300 text-base sm:text-lg shadow-sm hover:-translate-y-0.5 active:scale-[0.98] duration-150"
+            className="relative border-2 border-blue-700 dark:border-blue-300 text-blue-700 dark:text-blue-200 bg-transparent font-semibold py-2.5 px-7 rounded-lg transition hover:bg-blue-50 dark:hover:bg-blue-950 focus:outline-none focus-visible:ring-2 ring-blue-300 text-base xs:text-lg shadow-sm hover:-translate-y-0.5 active:scale-[0.98] duration-150 w-full xs:w-auto"
             tabIndex={0}
           >
             Why Swankey?
@@ -75,7 +75,7 @@ function Hero() {
           {/* Filled CTA Button */}
           <button
             type="button"
-            className="relative bg-blue-700 hover:bg-blue-800 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold py-2.5 px-7 rounded-lg transition focus:outline-none focus-visible:ring-2 ring-blue-300 text-base sm:text-lg shadow-md hover:-translate-y-1 active:scale-[0.98] duration-150"
+            className="relative bg-blue-700 hover:bg-blue-800 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold py-2.5 px-7 rounded-lg transition focus:outline-none focus-visible:ring-2 ring-blue-300 text-base xs:text-lg shadow-md hover:-translate-y-1 active:scale-[0.98] duration-150 w-full xs:w-auto"
             tabIndex={0}
             autoFocus
           >

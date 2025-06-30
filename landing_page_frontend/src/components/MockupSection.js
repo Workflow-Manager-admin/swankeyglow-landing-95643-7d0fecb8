@@ -14,28 +14,28 @@ function MockupSection() {
       label: 'SaaS',
       color: 'from-blue-500 to-blue-300 dark:from-blue-700 dark:to-blue-400',
       shadow: 'shadow-blue-200 dark:shadow-blue-900/40',
-      position: 'left-[-44px] md:left-[-84px] top-3 md:top-12',
+      position: 'left-[-24px] sm:left-[-44px] md:left-[-84px] top-3 md:top-12',
       anim: 'animate-[float-tags1_6s_ease-in-out_infinite]',
     },
     {
       label: 'Portfolio',
       color: 'from-pink-400 to-pink-300 dark:from-pink-600 dark:to-pink-400',
       shadow: 'shadow-pink-200 dark:shadow-pink-900/40',
-      position: 'right-[-22px] md:right-[-60px] top-20 md:top-40',
+      position: 'right-[-12px] sm:right-[-22px] md:right-[-60px] top-16 sm:top-20 md:top-40',
       anim: 'animate-[float-tags2_8s_ease-in-out_infinite]',
     },
     {
       label: 'Marketing',
       color: 'from-yellow-300 via-yellow-400 to-orange-300 dark:from-yellow-500 dark:to-orange-400',
       shadow: 'shadow-yellow-200 dark:shadow-yellow-900/40',
-      position: 'left-9 md:left-16 bottom-[10%] md:bottom-[14%]',
+      position: 'left-3 sm:left-9 md:left-16 bottom-[8%] sm:bottom-[10%] md:bottom-[14%]',
       anim: 'animate-[float-tags3_7s_ease-in-out_infinite]',
     },
     {
       label: 'Finance',
       color: 'from-green-400 to-green-300 dark:from-green-700 dark:to-green-400',
       shadow: 'shadow-green-200 dark:shadow-green-900/40',
-      position: 'right-2 md:right-14 bottom-6 md:bottom-14',
+      position: 'right-1 sm:right-2 md:right-14 bottom-4 sm:bottom-6 md:bottom-14',
       anim: 'animate-[float-tags4_11s_ease-in-out_infinite]',
     },
   ];
@@ -43,7 +43,7 @@ function MockupSection() {
   return (
     <section
       id="mockup"
-      className="relative py-16 md:py-28 px-3 flex flex-col items-center justify-center w-full bg-transparent select-none"
+      className="relative py-10 xs:py-14 sm:py-16 md:py-28 px-2 xs:px-3 sm:px-6 flex flex-col items-center justify-center w-full bg-transparent select-none"
     >
       {/* Animated background SVG accents */}
       <div className="absolute -z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
@@ -56,7 +56,7 @@ function MockupSection() {
       {/* Main browser mockup */}
       <div className="relative mx-auto w-full max-w-3xl rounded-3xl shadow-xl bg-white dark:bg-[#161D2A] ring-2 ring-blue-300/10 dark:ring-blue-900/30 border border-blue-100 dark:border-blue-900/30 transition-colors overflow-visible">
         {/* Browser chrome/tab bar */}
-        <div className="flex items-center px-6 py-2 bg-gray-100 dark:bg-[#232b3d] rounded-t-3xl border-b border-gray-200 dark:border-[#202736]">
+        <div className="flex items-center px-2 xs:px-3 sm:px-6 py-2 bg-gray-100 dark:bg-[#232b3d] rounded-t-3xl border-b border-gray-200 dark:border-[#202736]">
           {/* "traffic lights" */}
           <span className="inline-flex gap-1.5 mr-4">
             <span className="w-3 h-3 bg-red-400 rounded-full border border-white/50 dark:border-[#202736] shadow-sm" />
@@ -82,20 +82,20 @@ function MockupSection() {
           </div>
         </div>
         {/* Main browser window content area */}
-        <div className="relative px-6 pb-8 pt-8 sm:pt-10 min-h-[195px] md:min-h-[230px] flex flex-col items-center justify-center bg-gradient-to-br from-blue-50/60 via-white/95 to-blue-100/60 dark:from-blue-950/80 dark:via-gray-900/95 dark:to-blue-900/60 rounded-b-3xl">
+        <div className="relative px-3 xs:px-5 sm:px-6 pb-8 pt-8 sm:pt-10 min-h-[195px] md:min-h-[230px] flex flex-col items-center justify-center bg-gradient-to-br from-blue-50/60 via-white/95 to-blue-100/60 dark:from-blue-950/80 dark:via-gray-900/95 dark:to-blue-900/60 rounded-b-3xl">
           {/* Example UI content (replace with your best demo section) */}
           <div className="w-full max-w-lg mx-auto flex flex-col gap-3 items-center">
             {/* "Hero card" inside browser */}
-            <div className="w-full rounded-xl py-8 px-6 bg-white/90 dark:bg-gray-900/92 shadow-md border border-blue-100 dark:border-blue-950 text-center flex flex-col items-center transition-all">
-              <h3 className="font-extrabold text-2xl md:text-3xl text-blue-700 dark:text-blue-300 leading-tight mb-2 drop-shadow-sm">
+            <div className="w-full rounded-xl py-6 xs:py-8 px-3 xs:px-6 bg-white/90 dark:bg-gray-900/92 shadow-md border border-blue-100 dark:border-blue-950 text-center flex flex-col items-center transition-all">
+              <h3 className="font-extrabold text-xl xs:text-2xl md:text-3xl text-blue-700 dark:text-blue-300 leading-tight mb-2 drop-shadow-sm">
                 Next-Gen Web Demo
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg font-medium mb-4">
+              <p className="text-gray-600 dark:text-gray-300 text-sm xs:text-base md:text-lg font-medium mb-4">
                 Showcase your app inside a vibrant, interactive browser—perfect for landing pages and SaaS marketing.
               </p>
               <button
                 type="button"
-                className="mt-2 bg-blue-700 hover:bg-blue-800 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold py-2 px-7 rounded-lg shadow transition focus:outline-none text-base focus-visible:ring-2 ring-blue-300 active:scale-95"
+                className="mt-2 bg-blue-700 hover:bg-blue-800 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold py-2 px-7 rounded-lg shadow transition focus:outline-none text-base focus-visible:ring-2 ring-blue-300 active:scale-95 w-full xs:w-auto"
               >
                 Try Live Demo
               </button>

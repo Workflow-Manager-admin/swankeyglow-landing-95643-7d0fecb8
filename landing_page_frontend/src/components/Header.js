@@ -26,7 +26,7 @@ function Header({ theme, toggleTheme }) {
 
   return (
     <header className="sticky top-0 z-40 bg-white/70 dark:bg-[#1a1a1a]/80 transition backdrop-blur-md shadow-sm">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 py-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-3 xs:px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4">
         {/* Logo */}
         <a
           href="/"
@@ -75,6 +75,7 @@ function Header({ theme, toggleTheme }) {
           {/* Theme toggle is present on all screens */}
           <button
             className="ml-3 theme-toggle flex items-center text-xl p-2 rounded-full hover:bg-blue-100 dark:hover:bg-blue-950 transition"
+            style={{ color: '#ffffff', backgroundColor: '#172554' }}
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
             type="button"
@@ -121,14 +122,14 @@ function Header({ theme, toggleTheme }) {
       {/* Mobile Nav dropdown */}
       <div
         id="mobile-menu"
-        className={`md:hidden fixed top-0 left-0 w-full h-full z-40 bg-white/95 dark:bg-[#1a1a1ae6] flex flex-col px-6 py-6 transition-all duration-300 ${navOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0 pointer-events-none'}`}
+        className={`md:hidden fixed top-0 left-0 w-full h-full z-40 bg-white/95 dark:bg-[#1a1a1ae6] flex flex-col px-3 xs:px-4 sm:px-6 py-4 sm:py-6 transition-all duration-300 ${navOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0 pointer-events-none'}`}
         style={{
           backdropFilter: 'blur(14px)',
           WebkitBackdropFilter: 'blur(14px)'
         }}
         aria-hidden={!navOpen}
       >
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between mb-7 xs:mb-8">
           {/* Logo (mobile) */}
           <a
             href="/"

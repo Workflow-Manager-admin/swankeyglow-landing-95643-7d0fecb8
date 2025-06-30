@@ -83,10 +83,33 @@ p, .description {
     box-shadow 0.22s cubic-bezier(.21,.91,.59,1.33),
     transform 0.18s cubic-bezier(.24,1,.32,1.15);
   will-change: transform, box-shadow;
+  min-width: 0; /* Prevent overflow for small mobile screens */
+  box-sizing: border-box;
 }
 .card:hover, .hoverable:hover {
   box-shadow: 0 6px 26px 0 rgba(37,99,235,0.09), 0 2px 0px rgba(0,0,0,0.02);
   transform: translateY(-7px) scale(1.012);
+}
+
+/* Mobile adjustments: stack vertically, readable font sizes */
+@media (max-width: 500px) {
+  html {
+    font-size: 15px;
+  }
+  .card, .mockup {
+    padding-left: 0.7em !important;
+    padding-right: 0.7em !important;
+    min-width: 0;
+    font-size: 1em;
+  }
+  h1, .title {
+    font-size: 2em !important;
+    word-break: break-word;
+  }
+  body {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 
 a {
