@@ -56,8 +56,8 @@ function Hero() {
       <div className="max-w-2xl mx-auto flex flex-col items-center justify-center relative z-10">
         <h1 className="font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight text-gray-900 dark:text-white drop-shadow mb-4">
           The Modern Way to <br className="hidden sm:inline" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-500 to-indigo-400 dark:from-blue-400 dark:via-blue-300 dark:to-yellow-400 animate-gradient-xy">
-            Glow with Swankey
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-500 to-indigo-400 dark:from-blue-400 dark:via-blue-300 dark:to-yellow-400 animate-gradient-xy" style={{ color: '#000000' }}>
+            Glow with Daily Quotes
           </span>
         </h1>
         <p className="max-w-xl text-base sm:text-lg md:text-2xl text-gray-600 dark:text-gray-200 mb-10 font-medium">

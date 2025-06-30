@@ -2,18 +2,168 @@
 @tailwind components;
 @tailwind utilities;
 
-/* You can append your custom styles below. If you want to preserve previous content, paste below this block. */
+/* === CUSTOM GLOBAL FONTS === */
+/* Import Inter, Poppins from Google Fonts and set font-family order */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap');
 
+:root {
+  --font-sans: 'Inter', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* === BASE STYLES === */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-sans);
+  background:
+    linear-gradient(124deg,#e8f0fd 2%,#f9fafc 82%,#f5f7fb 100%),
+    radial-gradient(ellipse 70% 100% at 0% 0%,rgba(37,99,235,0.05) 38%,rgba(249,191,36,0.06) 92%);
+  background-blend-mode: lighten, normal;
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background 0.8s cubic-bezier(.18,.88,.38,1.11);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Dark theme support using data attribute */
+[data-theme="dark"] body,
+body[data-theme="dark"] {
+  background:
+    linear-gradient(110deg,#192e42 5%, #162447 50%,#0f172a 100%),
+    radial-gradient(circle at 80% 15%,rgba(37,99,235,.13) 35%,rgba(251,191,36,0.10) 94%);
+  background-blend-mode: lighten, normal;
 }
+
+/* Typography improvements */
+h1, .title {
+  font-family: 'Poppins', 'Inter', var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h2,h3,h4,h5,h6,.subtitle {
+  font-family: 'Poppins', 'Inter', var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+p, .description {
+  font-family: 'Inter', var(--font-sans);
+  font-weight: 400;
+  color: var(--text-color, #374151);
+  line-height: 1.7;
+}
+
+/* === GLOBAL BUTTON & CARD HOVER/ANIMATION === */
+.button, .btn, button, .card, .hoverable {
+  transition:
+    background 0.27s cubic-bezier(0.25,.9,0.27,1),
+    color 0.17s,
+    box-shadow 0.26s cubic-bezier(.23,1,.32,1),
+    border 0.18s;
+  cursor: pointer;
+  font-family: 'Inter', 'Poppins', var(--font-sans);
+  outline: none;
+}
+
+.button:hover, .btn:hover, .hoverable:hover, button:hover {
+  filter: brightness(1.04) saturate(1.035);
+  box-shadow: 0 8px 32px 0 rgba(37,99,235,0.13), 0 2px 1px rgba(0,0,0,0.01);
+  transform: translateY(-2px) scale(1.021);
+  opacity: 0.96;
+}
+
+.button:active, .btn:active, button:active {
+  filter: brightness(0.98);
+  transform: scale(0.97);
+}
+
+.card, .hoverable {
+  transition:
+    box-shadow 0.22s cubic-bezier(.21,.91,.59,1.33),
+    transform 0.18s cubic-bezier(.24,1,.32,1.15);
+  will-change: transform, box-shadow;
+}
+.card:hover, .hoverable:hover {
+  box-shadow: 0 6px 26px 0 rgba(37,99,235,0.09), 0 2px 0px rgba(0,0,0,0.02);
+  transform: translateY(-7px) scale(1.012);
+}
+
+a {
+  font-family: inherit;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.23s;
+}
+
+a:hover, a:focus-visible {
+  color: #2563eb;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.17em;
+}
+
+/* --- SVG CIRCULAR ACCENT LINES (GLOBALLY RE-USABLE) --- */
+.accent-circle {
+  position: absolute;
+  z-index: -2;
+  pointer-events: none;
+  width: 380px; height: 380px;
+  filter: blur(70px) saturate(1.31);
+  opacity: 0.22;
+  left: -80px; top: -66px;
+}
+.circle-line {
+  stroke-width: 8;
+  stroke: url(#circle-accent-gradient);
+}
+
+@media (max-width: 640px) {
+  .accent-circle { width: 230px; height: 230px; left: -27px; top: -20px;}
+}
+
+/* === Util classes for subtle fade, slide, scale-in === */
+.fadein {
+  opacity: 0;
+  animation: fadein 0.7s ease 0.15s forwards;
+}
+@keyframes fadein {
+  from { opacity: 0;}
+  to   { opacity: 1;}
+}
+.slideup {
+  opacity: 0; transform: translateY(34px);
+  animation: slideup 0.7s cubic-bezier(.18,.78,.42,1.27) 0.19s forwards;
+}
+@keyframes slideup {
+  from { opacity: 0; transform: translateY(34px);}
+  to { opacity: 1; transform: none;}
+}
+.scalein {
+  opacity: 0; transform: scale(0.93);
+  animation: scalein 0.64s cubic-bezier(.19,.88,.46,1.01) 0.09s forwards;
+}
+@keyframes scalein {
+  from { opacity: 0; transform: scale(0.93);}
+  to { opacity: 1; transform: scale(1);}
+}
+
+/* --- Custom scrollbar for modern polish --- */
+::-webkit-scrollbar {
+  width: 11px;
+  background: rgba(37,99,235,0.06);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(36,73,172,0.10);
+  border-radius: 10px;
+}
+
+/* Code font */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  background: #f1f5fb;
+  color: #17486f;
+  padding: 0.02em 0.34em;
+  border-radius: 5px;
+  font-size: 0.98em;
+}
+

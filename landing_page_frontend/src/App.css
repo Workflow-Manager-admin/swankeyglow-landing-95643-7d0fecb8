@@ -1,104 +1,226 @@
-/* CSS Variables for Theme Management */
+/* --- GLOBAL CSS VARIABLES: THEME COLORS, FONTS, RADIANT GRADIENTS --- */
 :root {
-  /* Light theme colors */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --text-primary: #282c34;
-  --text-secondary: #61dafb;
-  --border-color: #e9ecef;
-  --button-bg: #007bff;
-  --button-text: #ffffff;
+  /* Palette for Swankey modern look */
+  --kavia-primary: #2563eb;
+  --kavia-accent: #fbbf24;
+  --kavia-dark: #1a1a1a;
+  --kavia-info: #64748b;
+  --kavia-border: rgba(36,73,172,0.12);
+  --kavia-bg1: #f8fafc;
+  --kavia-bg2: #e0e7ff;
+  --gradient-primary: linear-gradient(120deg, #2563eb 9%, #60a5fa 55%, #fbbf24 93%);
+  --gradient-dark: linear-gradient(130deg, #1a1a1a 0%, #1e293b 60%, #334155 100%);
+  --font-sans: 'Inter', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --box-glow: 0 0 0 4px rgba(37,99,235,0.13), 0 4px 32px 0 rgba(37,99,235,0.09);
+  --text-color: #18181b;
+  --text-secondary: #64748b;
 }
 
 [data-theme="dark"] {
-  /* Dark theme colors */
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #282c34;
-  --text-primary: #ffffff;
-  --text-secondary: #61dafb;
-  --border-color: #404040;
-  --button-bg: #0056b3;
-  --button-text: #ffffff;
+  --kavia-bg1: #181926;
+  --kavia-bg2: #23283b;
+  --text-color: #fafcff;
+  --text-secondary: #94a3b8;
+}
+
+html, body, #root {
+  font-family: var(--font-sans);
+  min-height: 100%;
+  background: var(--kavia-bg1);
+  color: var(--text-color);
 }
 
 .App {
   text-align: center;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background:
+    linear-gradient(124deg,#e8f0fd 2%,#f9fafc 82%,#f5f7fb 100%),
+    radial-gradient(ellipse 70% 100% at 0% 0%,rgba(37,99,235,0.04) 38%,rgba(249,191,36,0.07) 92%);
+  color: var(--text-color, #374151);
   min-height: 100vh;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background 0.6s cubic-bezier(.18,.82,.38,1.11), color 0.32s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+[data-theme="dark"] .App,
+body[data-theme="dark"] .App {
+  background:
+    linear-gradient(110deg,#112045 5%, #162447 50%,#0f172a 100%),
+    radial-gradient(circle at 80% 15%,rgba(37,99,235,.14) 35%,rgba(251,191,36,0.11) 99%);
+  color: var(--text-color, #fafcff);
 }
 
 .App-header {
-  background-color: var(--bg-secondary);
-  min-height: 100vh;
+  background: none;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
-  color: var(--text-primary);
-  transition: background-color 0.3s ease;
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
   position: relative;
 }
 
-.App-link {
-  color: var(--text-secondary);
-  transition: color 0.3s ease;
+/* Animated gradient accent lines (for global SVGs/snippets) */
+.gradient-accent-line {
+  stroke-width: 7;
+  stroke: url(#linear-accent1);
+  filter: blur(0.3px);
+  opacity: .8;
+  stroke-linecap: round;
 }
 
-.theme-toggle {
+/* HERO CIRCULAR ACCENT DEMO */
+.hero-accent-outer {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: var(--button-bg);
-  color: var(--button-text);
+  z-index: -2;
+  pointer-events: none;
+  left: -8vw; top: -90px;
+  width: 420px; height: 420px;
+  filter: blur(88px) saturate(1.31);
+  opacity: 0.22;
+}
+.hero-accent-inner {
+  position: absolute;
+  z-index: -2;
+  pointer-events: none;
+  right: -8vw; bottom: -110px;
+  width: 430px; height: 430px;
+  filter: blur(80px) saturate(1.13);
+  opacity: 0.21;
+}
+@media (max-width: 700px) {
+  .hero-accent-outer, .hero-accent-inner { width: 230px; height: 230px;}
+}
+
+.theme-toggle, .theme-toggle-btn {
+  background-color: var(--kavia-bg2, #e0e7ff);
+  color: var(--kavia-primary, #2563eb);
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   padding: 10px 20px;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 1.15em;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition:
+    background 0.26s cubic-bezier(0.20,1,0.18,1),
+    color 0.17s,
+    box-shadow 0.23s cubic-bezier(.23,1,.32,1),
+    transform 0.19s;
+  box-shadow: 0 2.5px 10px rgba(37,99,235,0.05);
 }
 
-.theme-toggle:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  opacity: 0.9;
+.theme-toggle:hover, .theme-toggle-btn:hover {
+  background: var(--gradient-primary);
+  color: #fff;
+  transform: translateY(-2px) scale(1.06);
+  opacity: .9;
 }
 
-.theme-toggle:active {
-  transform: translateY(0);
+.theme-toggle:active, .theme-toggle-btn:active { transform: scale(0.965); }
+
+a, .App-link {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 2.5px;
+  transition: color 0.18s;
+}
+a:hover, .App-link:hover, a:focus-visible {
+  color: #23398c;
+  text-decoration-color: #fbbf24;
+}
+
+/* Buttons: Animate, Bold, Modern */
+.btn, button, .btn-large, .btn-outline {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border-radius: 0.65em;
+  transition:
+    background 0.23s cubic-bezier(0.22,0.8,0.36,1.04),
+    color 0.18s,
+    box-shadow 0.23s cubic-bezier(.23,1,.32,1),
+    transform 0.21s cubic-bezier(.23,1,.32,1);
+  outline: none;
+  cursor: pointer;
+}
+.btn:hover, .btn-large:hover, .btn-outline:hover, button:hover {
+  filter: brightness(1.04) saturate(1.07);
+  box-shadow: 0 9px 34px rgba(37,99,235,0.14), 0 2.5px 0px rgba(0,0,0,0.015);
+  transform: translateY(-2px) scale(1.021);
+  opacity: 0.962;
+}
+.btn:active, button:active { filter: brightness(0.97); transform: scale(0.972); }
+
+.card, .mockup, .browser-frame, .card-hover {
+  transition:
+    box-shadow 0.27s cubic-bezier(.21,.99,.64,1.33),
+    transform 0.18s cubic-bezier(.24,1,.32,1.15);
+}
+.card:hover, .card-hover:hover, .mockup:hover {
+  box-shadow: 0 8px 38px 0 rgba(37,99,235,0.13), 0 2px 1px rgba(0,0,0,0.01);
+  transform: translateY(-6px) scale(1.015);
+}
+
+input, select, textarea {
+  font-family: var(--font-sans);
+  border-radius: 0.35em;
+  transition: box-shadow 0.22s, border 0.16s;
+  border: 1px solid var(--kavia-border);
+}
+
+::-webkit-scrollbar {
+  width: 10.5px;
+  background: rgba(37,99,235,0.04);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(37,99,235, 0.15);
+  border-radius: 9px;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg);}
+  to   { transform: rotate(360deg);}
+}
+
+/* General fade/slide-in animations */
+.fadein { opacity: 0; animation: fadein 0.7s ease 0.15s forwards; }
+@keyframes fadein { from { opacity: 0;} to   { opacity: 1;} }
+.slideup { opacity: 0; transform: translateY(34px); animation: slideup 0.8s cubic-bezier(.18,.97,.42,1.17) 0.29s forwards;}
+@keyframes slideup {from {opacity:0;transform:translateY(34px);}to{opacity:1;transform:none;}}
+
+/* Text highlight for hero word(s) */
+.text-gradient {
+  background: linear-gradient(90deg,#2563eb 0%,#60a5fa 37%,#fbbf24 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-xy 8s ease-in-out infinite;
+}
+
+/* Custom utility for animated diagram backgrounds (hero, browser mockup, etc) */
+.bg-hero-gradient {
+  background:
+    linear-gradient(105deg, #e0e7ff 8%, #fcfbf7 74%, #f2f8fd 100%),
+    radial-gradient(ellipse at 70% 80%,rgba(37,99,235,0.12) 25%,rgba(251,191,36,0.10) 90%);
+  background-blend-mode: lighten, normal;
+}
+
+.bg-mockup-gradient {
+  background:
+    linear-gradient(93deg,#fff 21%,#e3e9fb 99%),
+    radial-gradient(ellipse at 15% 80%,rgba(37,99,235,0.10) 19%,rgba(251,191,36,0.08) 99%);
+  background-blend-mode: lighten, normal;
 }
 
 /* Responsive design for mobile */
-@media (max-width: 768px) {
-  .theme-toggle {
+@media (max-width: 700px) {
+  .theme-toggle, .theme-toggle-btn {
     top: 10px;
     right: 10px;
     padding: 8px 16px;
-    font-size: 12px;
+    font-size: 1em;
   }
+  .App-header { min-height: 72px;}
 }
