@@ -1,0 +1,4 @@
+{
+    "command": "npm run test",
+    "working_directory": "/home/kavia/workspace/code-generation/swankeyglow-landing-95643-7d0fecb8/landing_page_frontend"
+}
