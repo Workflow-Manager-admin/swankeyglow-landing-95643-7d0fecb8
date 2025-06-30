@@ -3,23 +3,27 @@ import React from 'react';
 /**
  * PUBLIC_INTERFACE
  * Hero section for a Swankey-inspired landing page.
- * Features: brand headline, subheadline, vibrant blue/purple gradients, decorative circular accents,
- * and two animated CTA buttons ('Why Swankey?' outlined, 'Get Started' filled).
- * Fully responsive, modern, uses Tailwind CSS.
+ * Features:
+ *  - Brand headline and subheadline
+ *  - Dynamic gradient circular backgrounds, animated accent lines (SVG)
+ *  - Two visually distinct CTA buttons: "Why Swankey" (outlined), "Get Started" (filled)
+ *  - Responsive, mobile-friendly stacking
+ *  - Modern typography and smooth transitions
+ *  - Tailwind CSS for all styling
  */
-// PUBLIC_INTERFACE
+ // PUBLIC_INTERFACE
 function Hero() {
   return (
     <section
       className="relative flex flex-col items-center justify-center overflow-hidden w-full py-20 px-4 md:py-32 text-center isolate"
       style={{ minHeight: '420px' }}
     >
-      {/* Beautiful background gradients and accents */}
+      {/* Gradients & Decorative Background */}
       <div
         className="absolute inset-0 pointer-events-none -z-10"
         aria-hidden="true"
       >
-        {/* Multi-gradient circular accent - top left */}
+        {/* Top-left accent */}
         <svg
           className="absolute left-[-7vw] top-[-80px] w-[420px] h-[420px] opacity-40 blur-[80px] animate-[float_7s_ease-in-out_infinite]"
           style={{ filter: 'saturate(1.4)' }}
@@ -35,7 +39,7 @@ function Hero() {
             </linearGradient>
           </defs>
         </svg>
-        {/* Multi-gradient circular accent - bottom right */}
+        {/* Bottom-right accent */}
         <svg
           className="absolute right-[-8vw] bottom-[-100px] w-[430px] h-[430px] opacity-30 blur-[88px] animate-[float2_8s_ease-in-out_infinite]"
           style={{ filter: 'saturate(1.3)' }}
@@ -53,12 +57,9 @@ function Hero() {
         </svg>
       </div>
 
-      {/* Hero content */}
+      {/* Hero Main Content */}
       <div className="max-w-2xl mx-auto flex flex-col items-center justify-center relative z-10">
         <h1 className="font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight text-gray-900 dark:text-white drop-shadow mb-4">
-          {/* 
-            Brand: primary color accent for "Swankey", text shadow for strong contrast
-          */}
           The Modern Way to <br className="hidden sm:inline" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-500 to-indigo-400 dark:from-blue-400 dark:via-blue-300 dark:to-yellow-400 animate-gradient-xy">
             Glow with Swankey
@@ -85,7 +86,7 @@ function Hero() {
           </button>
         </div>
       </div>
-      {/* Subtle animated floating accent lines (SVG) */}
+      {/* Animated floating accent lines */}
       <svg
         className="absolute left-1/2 top-[80%] -translate-x-1/2 w-[90vw] max-w-4xl opacity-25 dark:opacity-35 animate-[wobble_12s_ease-in-out_infinite]"
         height="90"
@@ -109,7 +110,7 @@ function Hero() {
           opacity="0.8"
         />
       </svg>
-      {/* Tailwind custom keyframes for smooth animation */}
+      {/* Custom animation keyframes for accents/gradient */}
       <style>
         {`
           @keyframes float {
